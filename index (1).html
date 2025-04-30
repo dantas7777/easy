@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Residência Médica - Mentoria para Aprovação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'easy-green': '#1ED4A6',
+                        'easy-black': '#000000',
+                        'easy-white': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(30,212,166,0.8) 0%, rgba(0,0,0,0.9) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(30,212,166,0.3);
+        }
+        
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30,212,166,0.4);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #1ED4A6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-poppins">
+    <!-- Header -->
+    <header class="fixed w-full bg-easy-black z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.imgur.com/71a4891e-d8fd-4b74-b2df-947bb2f506be.png" alt="Easy Residência Médica" class="h-10 mr-2">
+                <span class="text-easy-white font-bold text-xl hidden sm:block">Easy Residência</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-easy-white nav-link">Início</a>
+                <a href="#metodologia" class="text-easy-white nav-link">Metodologia</a>
+                <a href="#aulas" class="text-easy-white nav-link">Aulas Ao Vivo</a>
+                <a href="#plano" class="text-easy-white nav-link">Plano Gratuito</a>
+                <a href="#inscricao" class="text-easy-white nav-link">Inscrição</a>
+            </nav>
+            
+            <a href="#inscricao" class="hidden md:block bg-easy-green text-easy-white px-6 py-2 rounded-full font-medium btn-hover">
+                Quero ser mentorado
+            </a>
+            
+            <button class="md:hidden text-easy-white focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-easy-black w-full" id="mobile-menu">
+            <div class="px-4 py-3 space-y-4">
+                <a href="#inicio" class="block text-easy-white">Início</a>
+                <a href="#metodologia" class="block text-easy-white">Metodologia</a>
+                <a href="#aulas" class="block text-easy-white">Aulas Ao Vivo</a>
+                <a href="#plano" class="block text-easy-white">Plano Gratuito</a>
+                <a href="#inscricao" class="block text-easy-white">Inscrição</a>
+                <a href="#inscricao" class="block bg-easy-green text-easy-white px-6 py-2 rounded-full font-medium text-center">
+                    Quero ser mentorado
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 py-20 md:py-32">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold text-easy-white mb-6 leading-tight">
+                        A residência médica começa com direção. <span class="text-easy-green">A Easy é o seu caminho.</span>
+                    </h1>
+                    <p class="text-xl text-easy-white mb-8">
+                        Mentoria acessível, com plano gratuito, aulas ao vivo e estratégias de verdade para quem tem pouco tempo.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#inscricao" class="bg-easy-white text-easy-black px-8 py-3 rounded-full font-bold text-center btn-hover">
+                            Começar agora
+                        </a>
+                        <a href="#plano" class="border-2 border-easy-white text-easy-white px-8 py-3 rounded-full font-bold text-center btn-hover">
+                            Plano Gratuito
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                         alt="Médico estudando" 
+                         class="rounded-xl shadow-2xl max-w-md floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a Easy -->
+    <section class="py-20 bg-easy-black">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 flex justify-center">
+                    <img src="https://i.imgur.com/71a4891e-d8fd-4b74-b2df-947bb2f506be.png" 
+                         alt="Easy Residência Médica" 
+                         class="w-64 h-64 object-contain">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-easy-white mb-6">
+                        <span class="text-easy-green">Sobre a</span> Easy
+                    </h2>
+                    <p class="text-lg text-easy-white mb-6">
+                        A Easy Residência Médica foi criada por um médico aprovado em Cirurgia Geral com experiência em PS, UTI e enfermaria.
+                    </p>
+                    <p class="text-lg text-easy-white mb-6">
+                        Nosso foco é oferecer uma preparação realista, moderna e acessível, com apoio especial para quem precisa conciliar os estudos com uma rotina pesada de plantões.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-easy-green bg-opacity-20 p-4 rounded-lg">
+                            <i class="fas fa-check-circle text-easy-green text-xl mb-2"></i>
+                            <p class="text-easy-white font-medium">Preparação Realista</p>
+                        </div>
+                        <div class="bg-easy-green bg-opacity-20 p-4 rounded-lg">
+                            <i class="fas fa-clock text-easy-green text-xl mb-2"></i>
+                            <p class="text-easy-white font-medium">Para quem tem pouco tempo</p>
+                        </div>
+                        <div class="bg-easy-green bg-opacity-20 p-4 rounded-lg">
+                            <i class="fas fa-hand-holding-heart text-easy-green text-xl mb-2"></i>
+                            <p class="text-easy-white font-medium">Abordagem Humanizada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plano Gratuito -->
+    <section id="plano" class="py-20 bg-gradient-to-b from-easy-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-easy-white mb-4">
+                    <span class="text-easy-green">Plano Gratuito</span> - Comece agora mesmo
+                </h2>
+                <p class="text-xl text-easy-white max-w-3xl mx-auto">
+                    Acesso imediato a conteúdos de qualidade para você começar sua preparação hoje
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-900 p-8 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-easy-green rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-video text-easy-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-easy-white mb-3 text-center">Aulões ao vivo</h3>
+                    <p class="text-easy-white text-center">Aulas semanais com temas estratégicos para residência médica</p>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-easy-green rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-layer-group text-easy-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-easy-white mb-3 text-center">Flashcards</h3>
+                    <p class="text-easy-white text-center">Aprenda a criar e usar flashcards para revisão ativa</p>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-easy-green rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-calendar-alt text-easy-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-easy-white mb-3 text-center">Cronograma</h3>
+                    <p class="text-easy-white text-center">Cronograma básico de estudos para organizar sua rotina</p>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-easy-green rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-users text-easy-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-easy-white mb-3 text-center">Comunidade</h3>
+                    <p class="text-easy-white text-center">Tire dúvidas e se motive com outros estudantes</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#inscricao" class="inline-block bg-easy-green text-easy-white px-8 py-3 rounded-full font-bold btn-hover">
+                    Quero me inscrever no plano gratuito
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodologia Premium -->
+    <section id="metodologia" class="py-20 bg-easy-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-easy-white mb-4">
+                    <span class="text-easy-green">Metodologia</span> Premium
+                </h2>
+                <p class="text-xl text-easy-white max-w-3xl mx-auto">
+                    Mentoria individualizada para quem quer resultados consistentes e aprovação
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 p-8 rounded-xl card-hover">
+                    <h3 class="text-xl font-bold text-easy-green mb-4">Diagnóstico Inicial</h3>
+                    <p class="text-easy-white mb-4">Análise completa da sua situação atual: pontos fortes, dificuldades, tempo disponível e objetivos.</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-easy-green rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-search text-easy-white"></i>
+                        </div>
+                        <span class="text-easy-white">Personalizado para sua realidade</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-xl card-hover">
+                    <h3 class="text-xl font-bold text-easy-green mb-4">Revisão Ativa</h3>
+                    <p class="text-easy-white mb-4">Flashcards personalizados, questões comentadas e simulados periódicos para fixação do conteúdo.</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-easy-green rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-brain text-easy-white"></i>
+                        </div>
+                        <span class="text-easy-white">Métodos comprovados cientificamente</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-xl card-hover">
+                    <h3 class="text-xl font-bold text-easy-green mb-4">Acompanhamento</h3>
+                    <p class="text-easy-white mb-4">Suporte direto via WhatsApp ou plataforma para ajustes e dúvidas ao longo do processo.</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-easy-green rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-comments text-easy-white"></i>
+                        </div>
+                        <span class="text-easy-white">Respostas rápidas e direto ao ponto</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 p-8 rounded-xl card-hover">
+                    <h3 class="text-xl font-bold text-easy-green mb-4">Produtividade</h3>
+                    <p class="text-easy-white mb-4">Técnicas para maximizar seu tempo de estudo, mesmo com poucas horas disponíveis.</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-easy-green rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-bolt text-easy-white"></i>
+                        </div>
+                        <span class="text-easy-white">Estude menos, aprenda mais</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#inscricao" class="inline-block bg-easy-green text-easy-white px-8 py-3 rounded-full font-bold btn-hover">
+                    Quero a mentoria premium
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Mentor -->
+    <section class="py-20 bg-gradient-to-b from-gray-900 to-easy-black">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-12 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Dr. Vitor Gabriel Dantas Costa" 
+                             class="rounded-full w-64 h-64 object-cover border-4 border-easy-green shadow-lg">
+                        <div class="absolute -bottom-4 -right-4 bg-easy-green text-easy-black px-4 py-2 rounded-full font-bold">
+                            <i class="fas fa-graduation-cap mr-2"></i> Mentor
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3 md:pl-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-easy-white mb-6">
+                        <span class="text-easy-green">Dr. Vitor Gabriel</span> Dantas Costa
+                    </h2>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-easy-green rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user-md text-easy-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-easy-white">Médico aprovado em Cirurgia Geral</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-easy-green rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-heart text-easy-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-easy-white">Apaixonado por ensino médico</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-easy-green rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-briefcase text-easy-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-easy-white">Mentor de quem trabalha e estuda</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg text-easy-white mb-6">
+                        "Entendo a realidade de quem precisa conciliar plantões com estudos. Desenvolvi métodos que me permitiram ser aprovado nessa condição e agora ajudo outros médicos a fazerem o mesmo."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vantagens -->
+    <section class="py-20 bg-gradient-to-b from-easy-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-easy-white mb-4">
+                    Por que escolher a <span class="text-easy-green">Easy</span>?
+                </h2>
+                <p class="text-xl text-easy-white max-w-3xl mx-auto">
+                    Diferenciais que fazem nossa mentoria ser única
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 bg-easy-green rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i class="fas fa-brain text-easy-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-easy-white mb-2">Ensino de técnicas de estudo ativo</h3>
+                        <p class="text-easy-white">Métodos baseados em evidências científicas para aprendizagem eficiente</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="w-12 h-12 bg-easy-green rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i class="fas fa-unlock-alt text-easy-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-easy-white mb-2">Mentoria com plano gratuito real</h3>
+                        <p class="text-easy-white">Conteúdo de qualidade disponível sem custo para todos</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="w-12 h-12 bg-easy-green rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i class="fas fa-heart text-easy-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-easy-white mb-2">Abordagem humanizada e prática</h3>
+                        <p class="text-easy-white">Entendemos sua realidade e oferecemos soluções viáveis</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="w-12 h-12 bg-easy-green rounded-full flex items-center justify-center mr-4 mt-1">
+                        <i class="fas fa-clock text-easy-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-easy-white mb-2">Aulas para quem tem pouco tempo</h3>
+                        <p class="text-easy-white">Cronogramas e estratégias pensados para rotinas intensas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="inscricao" class="py-20 bg-easy-green">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-easy-white mb-6">
+                Não estude mais no escuro. <span class="text-easy-black">Comece com a Easy</span> e transforme sua preparação.
+            </h2>
+            <p class="text-xl text-easy-white mb-8 max-w-3xl mx-auto">
+                Escolha o plano que melhor se adapta às suas necessidades e dê o primeiro passo rumo à aprovação
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#" class="bg-easy-black text-easy-white px-8 py-4 rounded-full font-bold btn-hover">
+                    Quero ser mentorado agora
+                </a>
+                <a href="#" class="bg-easy-white text-easy-black px-8 py-4 rounded-full font-bold btn-hover">
+                    Falar com o mentor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-easy-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.imgur.com/71a4891e-d8fd-4b74-b2df-947bb2f506be.png" 
+                             alt="Easy Residência Médica" 
+                             class="h-10 mr-2">
+                        <span class="text-easy-white font-bold text-xl">Easy Residência</span>
+                    </div>
+                    <p class="text-easy-white">
+                        Mentoria prática e acessível para residência médica
+                    </p>
+                </div>
+                
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-lg font-bold text-easy-white mb-4">Contato</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-easy-white hover:text-easy-green text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-easy-white hover:text-easy-green text-2xl">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:contato@easyresidencia.com" class="text-easy-white hover:text-easy-green text-2xl">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <h3 class="text-lg font-bold text-easy-white mb-4">Links Rápidos</h3>
+                    <div class="flex flex-col space-y-2">
+                        <a href="#inicio" class="text-easy-white hover:text-easy-green">Início</a>
+                        <a href="#metodologia" class="text-easy-white hover:text-easy-green">Metodologia</a>
+                        <a href="#plano" class="text-easy-white hover:text-easy-green">Plano Gratuito</a>
+                        <a href="#inscricao" class="text-easy-white hover:text-easy-green">Inscrição</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-easy-white">
+                    Copyright © 2025 – Easy Residência Médica. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Dantas777/easy-resid-ncia" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
